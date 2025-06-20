@@ -38,6 +38,7 @@ This repository contains my daily hands-on practice of core JavaScript — focus
 
 ## 📅 Plan
 
+
 - Day 5: `map()`, `filter()`, `reduce()`
 - Day 6–10: String methods, DOM manipulation
 - Day 11–30: Projects, deep logic, async JS, and mini-apps
