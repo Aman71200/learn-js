@@ -17,6 +17,25 @@ This repository contains my daily hands-on practice of core JavaScript — focus
 
 ---
 
+## ✅ Day 4 – JavaScript Practice
+
+### Topics Covered:
+- Array Methods: `map()`, `filter()`
+
+### Practice Files:
+- `map-practice.js`: Basic to intermediate problems on `map()`
+- `filter-practice.js`: Value filtering, object filtering, truthy value filtering
+
+### Learning Notes:
+- Practiced real-world use-cases of `map()` like price updates, greetings, etc.
+- Filtered arrays by conditions: score, price, status, and removed falsy values.
+- Understood the difference between transformation (`map`) and selection (`filter`).
+
+### Status:
+- [x] map() completed ✅
+- [x] filter() completed ✅
+- [ ] reduce() – scheduled for next session
+
 ## 📅 Plan
 
 - Day 5: `map()`, `filter()`, `reduce()`

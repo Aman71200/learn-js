@@ -299,12 +299,193 @@ function studentData() {
 
 studentData();
 
+// # Day 4 – JavaScript Array Functional Methods
+// map(), filter(), reduce();
+// Ready-to-use Example:
 
-// function modifyStudents(arr) {
-  // Step 1: push
-  // Step 2: shift
-  // Step 3: splice (for Zara)
-  // Step 4: slice and return sliced array
+let products = [
+  { name: "Shirt", price: 500 },
+  { name: "Pant", price: 800 },
+  { name: "Socks", price: 100 }
+];
 
-  // return dono: final array + sliced
-// }
+// 1. Discounted price (map)
+let discounted = products.map(p => ({ ...p, price: p.price * 0.9 }));
+console.log(discounted, "price after discount");
+
+// 2. Only products above 200 (filter)
+let premium = discounted.filter(p => p.price > 200);
+console.log(premium, "produts above 200");
+
+// 3. Total bill (reduce)
+let total = premium.reduce((acc, item) => acc + item.price, 0);
+console.log(total, "ypur total price");
+
+// Day 4 questions
+
+// map() syntax
+// let newArray = oldArray.map(function(item, index, array) {
+//   return modifiedItem;
+// });
+    
+// shorthand
+// let newArray = oldArray.map(item => modifiedItem);
+    
+// Question 1 Use map() to return a new array of squares
+
+// let digits = [1, 2, 3, 4, 5];
+// let sqared = digits.map(digits => digits * digits);
+// console.log(sqared);
+
+// example Question Slightly Real Example — Add GST to Prices
+
+let prices = [100, 200, 300];
+let gstPrices = prices.map(price => price + price * 0.18);
+console.log(gstPrices, "Your bill after GST"); // [118, 236, 354]
+
+// example question Loop + Object Example
+
+let users = ["Ali", "Sara", "Zara"];
+let greetings = users.map(name => `Hello, ${name}!`);
+console.log(greetings);
+// ["Hello, Ali!", "Hello, Sara!", "Hello, Zara!"]
+
+// Day 4 Questions 
+// Q1. Start Sqare All Numbers
+
+// Output: [4, 9, 16]
+
+let digits = [2, 3, 4];
+let squareNums = digits.map(digit => digits * digits);
+console.log("All nums are squaed", squareNums);
+
+// Q2. Convert strings to uppercase
+;
+// Output: ["ALI", "SARA", "ZARA"]
+
+let names = ["ali", "sara", "zara"];
+let uppercase = names.map(names => names.toUpperCase());
+console.log("All nanes without converted to uppercase", names);
+console.log("All nanes are converted to uppercase", uppercase);
+
+// Q3. Add ₹100 delivery charge to each order
+
+// Output: [600, 1100, 850]
+
+let orders = [500, 1000, 750];
+let afterCharge = orders.map(order => orders + 100);
+console.log("Your Bill after adding dilivery Charges", afterCharge);
+
+// Q4. Attach "Mr./Ms." in front of each name
+
+// Output: ["Mr./Ms. Ali", "Mr./Ms. Sara", "Mr./Ms. John"]
+
+let guests = ["Ali", "Sara", "John"];
+let afterBecome = guests.map(guest => `Mr./Ms. ${guests}`);
+console.log("Names after adding Mr and Ms", afterBecome);
+
+// Q5. with object 
+// Double the prices in array of objects
+// output 
+// [
+//   { name: "pen", price: 20 },
+//   { name: "notebook", price: 100 }
+// ]
+
+
+let items = [
+  { name: "pen", price: 10 },
+  { name: "notebook", price: 50 }
+];
+
+let doublePrice = items.map(items => ({...items, price: items.price + items.price}))
+console.log("Items price after Double the price", doublePrice);
+
+// filter syntax
+
+// let newArray = oldArray.filter(function(item, index, array) {
+//   return condition;
+// });
+
+// shorthand 
+// let newArray = oldArray.filter(item => condition);
+
+// Examples code and logics 
+// with array
+let numData = [10, 25, 5, 30];
+
+let result = numData.filter(num => num >= 20);
+console.log(result); // [25, 30]
+
+// with object
+
+let usersData = [
+  { name: "Ali", active: true },
+  { name: "Sara", active: false },
+  { name: "Zara", active: true }
+];
+
+let activeUsers = usersData.filter(user => user.active);
+console.log(activeUsers);
+
+// common mistakes to Avoid
+
+// array.filter(item => item * 2); // ❌ Wrong
+// Because filter expects: true / false
+
+// Correct:
+// array.filter(item => item > 10); // ✅
+
+
+// Q6. Filter numbers >= 50
+
+let filterNums = [20, 55, 10, 99, 42, 75];
+// Output: [55, 99, 75]
+
+let getFinalNum = filterNums.filter(nums => nums >= 50);
+console.log(`numbers was filtered ${getFinalNum}`);
+
+// Q7. Filter even numbers
+
+let values = [1, 2, 3, 4, 5, 6, 7, 8];
+// Output: [2, 4, 6, 8]
+
+let evenVlaues = values.filter(val => val % 2 === 0);
+console.log(`All even values is ${evenVlaues}`);
+
+//  Q8. Filter affordable products
+
+let productsData = [
+  { name: "Bag", price: 200 },
+  { name: "Shoes", price: 1500 },
+  { name: "Cap", price: 300 }
+];
+
+// Filter products with price < 1000
+// Output: [{ name: "Bag", price: 200 }, { name: "Cap", price: 300 }]
+
+let affordable = productsData.filter(p => p.price < 1000);
+console.log("All affoardable produts are here", affordable);
+
+// Q9. Filter passed students
+
+let marks = [
+  { name: "Ali", score: 33 },
+  { name: "Sara", score: 85 },
+  { name: "Zara", score: 20 },
+  { name: "John", score: 77 }
+];
+
+// Passing marks: >= 35
+// Output: [{ name: "Sara", ... }, { name: "John", ... }]
+
+let finalResult = marks.filter(m => m.score >= 35);
+console.log("Students who passed the Exam", finalResult);
+
+// Q10. Filter truthy values only
+
+let messy = [0, "Ali", "", false, 42, null, "Zara"];
+// Output: ["Ali", 42, "Zara"]
+
+let clean = messy.filter(item => Boolean(item));
+console.log(`All turthy values is ${clean}`);
